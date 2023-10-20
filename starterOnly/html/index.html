@@ -59,12 +59,13 @@
             <form
               name="reserve"
               action="index.html"
-              method="get"
-              onsubmit="return validate();"
+              method="post"
+              onsubmit="validate(event);"
             >
               <div
+                id="formDataPrenom"
                 class="formData">
-                <label>Prénom</label><br>
+                <label for="first">Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
@@ -74,8 +75,9 @@
                 /><br>
               </div>
               <div
+                id="formDataNom"
                 class="formData">
-                <label>Nom</label><br>
+                <label for="last">Nom</label>
                 <input
                   class="text-control"
                   type="text"
@@ -84,8 +86,9 @@
                 /><br>
               </div>
               <div
+                id="formDataEmail"
                 class="formData">
-                <label>E-mail</label><br>
+                <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
                   type="email"
@@ -94,8 +97,9 @@
                 /><br>
               </div>
               <div
+                id="formDataAnniversaire"
                 class="formData">
-                <label>Date de naissance</label><br>
+                <label for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
@@ -105,11 +109,12 @@
               </div>
               <div
                 class="formData">
-                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" value="0">
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
+                id = "formDataLocalisation"
                 class="formData">
                 <input
                   class="checkbox-input"
@@ -185,17 +190,18 @@
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
+                  name="terms"
                   checked
                 />
-                <label class="checkbox2-label" for="checkbox1" required>
+                <label id="formDataTerms" class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
-                <input class="checkbox-input" type="checkbox" id="checkbox2" />
+                <input class="checkbox-input" type="checkbox" id="checkbox2" name="newsletter" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
-                  Je Je souhaite être prévenu des prochains évènements.
+                  Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
               </div>
@@ -215,6 +221,7 @@
         Copyright 2014 - 2022, GameOn Inc.
       </p>
     </footer>
+    <script src="../js/utils.js"></script>
     <script src="../js/modal.js"></script>
   </body>
 </html>
