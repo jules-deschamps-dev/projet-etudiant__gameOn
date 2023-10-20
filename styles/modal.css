@@ -532,3 +532,17 @@ footer {
     opacity: 1;
   }
 }
+
+
+
+
+
+
+
+
+#modale-confirmation{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
