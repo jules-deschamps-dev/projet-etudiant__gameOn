@@ -99,7 +99,11 @@ const printFormErrors = (selector, message) => {
 }
 
 
-
+/**
+ * Affiche une modale pour le succès de l'inscription à un tournoi
+ * 
+ * @param {string} localisation Lieu du tournoi
+ */
 const confirmInscription = (localisation) => {
   // fait disparaitre le formulaire d'inscription
   form.style.display = 'none';
