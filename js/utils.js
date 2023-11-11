@@ -9,8 +9,8 @@ const errorsMessages = {
 };
 
 const formRules = {
-  prenom: (value) => value.length >= 2,
-  nom: (value) => value.length >= 2,
+  prenom: (value) => value.length >= 2 && /^[a-zA-Z]+$/.test(value),
+  nom: (value) => value.length >= 2 && /^[a-zA-Z]+$/.test(value),
   email: (value) => /^[\w\.-]+@[\w\.-]+\.\w+$/.test(value),
   localisation: (value) => value !== 'undefined',
   anniversaire: (value) => verifierAge(value),

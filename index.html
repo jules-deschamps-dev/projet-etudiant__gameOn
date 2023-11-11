@@ -64,20 +64,21 @@
                 <input
                   class="text-control"
                   type="text"
-                  id="first"
-                  name="first"
-                  minlength="2"
+                  id="prenom"
+                  name="prenom"
+                  onblur="inputController('prenom')"
                 /><br>
               </div>
               <div
                 id="formDataNom"
                 class="formData">
-                <label for="last">Nom</label>
+                <label for="nom">Nom</label>
                 <input
                   class="text-control"
                   type="text"
-                  id="last"
-                  name="last"
+                  id="nom"
+                  name="nom"
+                  onblur="inputController('nom')"
                 /><br>
               </div>
               <div
@@ -89,17 +90,19 @@
                   type="email"
                   id="email"
                   name="email"
+                  onblur="inputController('email')"
                 /><br>
               </div>
               <div
                 id="formDataAnniversaire"
                 class="formData">
-                <label for="birthdate">Date de naissance</label><br>
+                <label for="anniversaire">Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
-                  id="birthdate"
-                  name="birthdate"
+                  id="anniversaire"
+                  name="anniversaire"
+                  onblur="inputController('anniversaire')"
                 /><br>
               </div>
               <div
@@ -186,6 +189,7 @@
                   type="checkbox"
                   id="checkbox1"
                   name="terms"
+                  onblur="inputController('terms')"
                   checked
                 />
                 <label id="formDataTerms" class="checkbox2-label" for="checkbox1" required>

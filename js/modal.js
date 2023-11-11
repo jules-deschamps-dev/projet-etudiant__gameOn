@@ -73,10 +73,10 @@ const validate = (event) => {
 
   // recupération des valeurs du formulaire
   const data = new FormData();
-  data.append('prenom', target.querySelector("input#first").value);
-  data.append('nom', target.querySelector("input#last").value);
+  data.append('prenom', target.querySelector("input#prenom").value);
+  data.append('nom', target.querySelector("input#nom").value);
   data.append('email', target.querySelector("input#email").value);
-  data.append('anniversaire', target.querySelector("input#birthdate").value);
+  data.append('anniversaire', target.querySelector("input#anniversaire").value);
   data.append('nbTournoi', target.querySelector("input#quantity").value);
   data.append('localisation', target.querySelector('input[name="location"]:checked')?.value);
   data.append('terms', target.querySelector("input[name='terms']").checked);
@@ -98,6 +98,16 @@ const validate = (event) => {
     inputs.forEach(element => {
       element.value = ""
     });
+  }
+}
+
+function inputController(key) {
+  const element = `#formData${capitalizeFirstLetter(key)}`
+  document.querySelector(element).querySelector('.error-message')?.remove();
+  const value = document.querySelector('#' + key).value;
+  if (errorsMessages.hasOwnProperty(key) && !(formRules[key](value))) {
+    printFormErrors(element , errorsMessages[key]);
+    isError = true;
   }
 }
 
